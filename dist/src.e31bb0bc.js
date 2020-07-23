@@ -24131,7 +24131,7 @@ var App = /*#__PURE__*/function (_Component) {
             return alert(error.message);
           });
         }
-      }).catcha(function (error) {
+      }).catch(function (error) {
         return alert(error.message);
       });
     });

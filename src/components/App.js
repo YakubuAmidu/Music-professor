@@ -36,7 +36,7 @@ class App extends Component{
          .catch(error => alert(error.message));
       }
     })
-    .catcha(error => alert(error.message));
+    .catch(error => alert(error.message));
   }
 
   render() {
