@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Tracks extends Component {
+     playAudio = previewUrl => {
+         const audio = new Audio(previewUrl);
+
+         audio.play();
+     }
+
     render() {
         const { tracks } = this.props;
 
@@ -8,7 +14,7 @@ class Tracks extends Component {
             <div>
                 {
                     tracks.map(track => {
-                        const { id, name, album } = track;
+                        const { id, name, album, preview_url } = track;
 
                          return (
                              <div key={id}>

@@ -24102,15 +24102,30 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var Tracks = /*#__PURE__*/function (_Component) {
   _inherits(Tracks, _Component);
 
   var _super = _createSuper(Tracks);
 
   function Tracks() {
+    var _this;
+
     _classCallCheck(this, Tracks);
 
-    return _super.apply(this, arguments);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "playAudio", function (previewUrl) {
+      var audio = new Audio(previewUrl);
+      audio.play();
+    });
+
+    return _this;
   }
 
   _createClass(Tracks, [{
@@ -24120,7 +24135,8 @@ var Tracks = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/_react.default.createElement("div", null, tracks.map(function (track) {
         var id = track.id,
             name = track.name,
-            album = track.album;
+            album = track.album,
+            preview_url = track.preview_url;
         return /*#__PURE__*/_react.default.createElement("div", {
           key: id
         }, /*#__PURE__*/_react.default.createElement("img", {
