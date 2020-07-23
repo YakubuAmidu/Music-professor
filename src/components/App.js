@@ -9,6 +9,12 @@ class App extends Component{
     this.setState({ artistQuery: event.target.value });
   }
 
+  handleKeyPress = event => {
+    if (event.key === 'Enter') {
+      this.searchArtist();
+    }
+  }
+
   searchArtist = () => {
     console.log('this.state', this.state);
   }

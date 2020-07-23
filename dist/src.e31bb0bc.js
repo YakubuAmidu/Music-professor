@@ -24099,6 +24099,12 @@ var App = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "handleKeyPress", function (event) {
+      if (event.key === 'Enter') {
+        _this.searchArtist();
+      }
+    });
+
     _defineProperty(_assertThisInitialized(_this), "searchArtist", function () {
       console.log('this.state', _this.state);
     });
