@@ -24091,6 +24091,14 @@ var App = /*#__PURE__*/function (_Component) {
       artistQuery: ''
     });
 
+    _defineProperty(_assertThisInitialized(_this), "updateArtistQuery", function (event) {
+      console.log('event.target.value', event.target.value);
+
+      _this.setState({
+        artistQuery: event.target.value
+      });
+    });
+
     return _this;
   }
 
