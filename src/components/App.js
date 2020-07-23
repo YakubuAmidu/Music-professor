@@ -42,11 +42,6 @@ class App extends Component{
     return (
       <div>
         <h2>Music Professor</h2>
-        <input 
-        onChange={this.updateArtistQuery} 
-        onKeyPress={this.handleKeyPress}
-        placeholder="Search for an artist" />
-        <button onClick={this.searchArtist}>Search</button>
         <Artist artist={this.state.artist} />
         <Tracks tracks={this.state.tracks} />
       </div>

@@ -24300,13 +24300,7 @@ var App = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       console.log('this.state', this.state);
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Music Professor"), /*#__PURE__*/_react.default.createElement("input", {
-        onChange: this.updateArtistQuery,
-        onKeyPress: this.handleKeyPress,
-        placeholder: "Search for an artist"
-      }), /*#__PURE__*/_react.default.createElement("button", {
-        onClick: this.searchArtist
-      }, "Search"), /*#__PURE__*/_react.default.createElement(_Artist.default, {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Music Professor"), /*#__PURE__*/_react.default.createElement(_Artist.default, {
         artist: this.state.artist
       }), /*#__PURE__*/_react.default.createElement(_Tracks.default, {
         tracks: this.state.tracks
