@@ -9,14 +9,19 @@ class App extends Component{
     this.setState({ artistQuery: event.target.value });
   }
 
+  searchArtist = () => {
+    console.log('this.state', this.state);
+  }
+
   render() {
     return (
       <div>
         <h2>Music Professor</h2>
         <input 
         onChange={this.updateArtistQuery} 
+        onKeyPress={this.handleKeyPress}
         placeholder="Search for an artist" />
-        <button>Search</button>
+        <button onClick={this.searchArtist}>Search</button>
       </div>
     );
   }
