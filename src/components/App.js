@@ -7,7 +7,9 @@ class App extends Component{
     return (
       <div>
         <h2>Music Professor</h2>
-        <input placeholder="Search for an artist" />
+        <input 
+        onChange={this.updateArtistQuery} 
+        placeholder="Search for an artist" />
         <button>Search</button>
       </div>
     );

@@ -24098,6 +24098,7 @@ var App = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Music Professor"), /*#__PURE__*/_react.default.createElement("input", {
+        onChange: this.updateArtistQuery,
         placeholder: "Search for an artist"
       }), /*#__PURE__*/_react.default.createElement("button", null, "Search"));
     }
