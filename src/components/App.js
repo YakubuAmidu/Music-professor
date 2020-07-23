@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Artist from './Artist';
 
 const API_ADDRESS = 'https://spotify-api-wrapper.appspot.com';
 
@@ -20,7 +21,7 @@ class App extends Component{
     .then(response => response.json())
     .then(json => {
 
-      if (json.artists.total > 0 ) {
+      if (json.artists.total > 0) {
          const artist = json.artists.items[0];
 
          this.setState({ artist });
@@ -45,6 +46,7 @@ class App extends Component{
         onKeyPress={this.handleKeyPress}
         placeholder="Search for an artist" />
         <button onClick={this.searchArtist}>Search</button>
+        <Artist artist={this.state.artist} />
       </div>
     );
   }
