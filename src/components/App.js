@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const API_ADDRESS = 'https://spotify-api-wrapper.appspot.com';
+
 class App extends Component{
   state = { artistQuery: '' };
 
