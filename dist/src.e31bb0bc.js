@@ -24109,7 +24109,11 @@ var App = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "searchArtist", function () {
       console.log('this.state', _this.state);
-      fetch("".concat(API_ADDRESS, "/artist/").concat(_this.state.artistQuery));
+      fetch("".concat(API_ADDRESS, "/artist/").concat(_this.state.artistQuery)).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        console.log('json', json);
+      });
     });
 
     return _this;
