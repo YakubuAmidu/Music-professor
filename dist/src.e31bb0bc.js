@@ -24121,7 +24121,8 @@ var Tracks = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      playing: false
+      playing: false,
+      audio: null
     });
 
     _defineProperty(_assertThisInitialized(_this), "playAudio", function (previewUrl) {
@@ -24132,7 +24133,14 @@ var Tracks = /*#__PURE__*/function (_Component) {
           audio.play();
 
           _this.setState({
-            playing: true
+            playing: true,
+            audio: audio
+          });
+        } else {
+          _this.state.audio.pause();
+
+          _this.setState({
+            playing: false
           });
         }
       };
