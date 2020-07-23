@@ -25,9 +25,15 @@ class App extends Component{
       console.log('json', json);
 
       if (json.artist.total > 0 ) {
-         const artist = json.artist.item[0];
-
+         const artist = json.artist.items[0];
+         
+         console.log('artist', artist);
          this.setState({ artist });
+
+         this.setState(`${API_ADDRESS}/artist/${artist.id}/top-tracks`)
+         .then(response => response.json())
+         .then(json => console.log('tracks json', json))
+         
       }
     });
   }
