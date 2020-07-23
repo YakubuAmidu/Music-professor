@@ -8,8 +8,13 @@ class Tracks extends Component {
             <div>
                 {
                     tracks.map(track => {
-                        const { track, name } = track;
-                        
+                        const { id, name, album } = track;
+
+                         return (
+                             <div key={id}>
+                                 <img src={album.images[0].url} alt="track-image" />
+                             </div>
+                         )
                     })
                 }
             </div>
