@@ -24131,6 +24131,8 @@ var Tracks = /*#__PURE__*/function (_Component) {
   _createClass(Tracks, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var tracks = this.props.tracks;
       return /*#__PURE__*/_react.default.createElement("div", null, tracks.map(function (track) {
         var id = track.id,
@@ -24138,7 +24140,8 @@ var Tracks = /*#__PURE__*/function (_Component) {
             album = track.album,
             preview_url = track.preview_url;
         return /*#__PURE__*/_react.default.createElement("div", {
-          key: id
+          key: id,
+          onClick: _this2.playAudio(preview_url)
         }, /*#__PURE__*/_react.default.createElement("img", {
           src: album.images[0].url,
           alt: "track-image"
