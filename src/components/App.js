@@ -19,6 +19,7 @@ class App extends Component{
 
   searchArtist = () => {
     console.log('this.state', this.state);
+    fetch(`${API_ADDRESS}/artist/${this.state.artistQuery}`)
   }
 
   render() {
