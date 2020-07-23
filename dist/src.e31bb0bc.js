@@ -24122,7 +24122,8 @@ var Tracks = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       playing: false,
-      audio: null
+      audio: null,
+      playingPreviewUrl: null
     });
 
     _defineProperty(_assertThisInitialized(_this), "playAudio", function (previewUrl) {
@@ -24134,14 +24135,24 @@ var Tracks = /*#__PURE__*/function (_Component) {
 
           _this.setState({
             playing: true,
-            audio: audio
+            audio: audio,
+            playingPreviewUrl: previewUrl
           });
         } else {
           _this.state.audio.pause();
 
-          _this.setState({
-            playing: false
-          });
+          if (_this.state.playingPreviewUrl === previewUrl) {
+            _this.setState({
+              playing: false
+            });
+          } else {
+            audio.play();
+
+            _this.setState({
+              audio: audio,
+              playingPreviewUrl: previewUrl
+            });
+          }
         }
       };
     });
