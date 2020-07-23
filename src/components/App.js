@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const API_ADDRESS = 'https://spotify-api-wrapper.appspot.com';
 
 class App extends Component{
-  state = { artistQuery: '' };
+  state = { artistQuery: '', null };
 
   updateArtistQuery = event => {
     console.log('event.target.value', event.target.value);
@@ -23,7 +23,13 @@ class App extends Component{
     .then(response => response.json())
     .then(json => {
       console.log('json', json);
-    })
+
+      if (json.artist.total > 0 ) {
+         const artist = json.artist.item[0];
+
+         this.setState({ artist });
+      }
+    });
   }
 
   render() {
