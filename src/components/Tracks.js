@@ -31,9 +31,13 @@ class Tracks extends Component {
                         const { id, name, album, preview_url } = track;
 
                          return (
-                             <div key={id} onClick={this.playAudio(preview_url)}>
-                                 <img src={album.images[0].url} alt="track-image" />
-                                 <p>{name}</p>
+                             <div key={id} 
+                             onClick={this.playAudio(preview_url)} 
+                             className="track">
+                             <img src={album.images[0].url} 
+                             alt="track-image" 
+                             className="track-image"/>
+                             <p className="track-text">{name}</p>
                              </div>
                          )
                     })

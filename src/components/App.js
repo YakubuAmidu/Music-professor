@@ -8,8 +8,12 @@ const API_ADDRESS = 'https://spotify-api-wrapper.appspot.com';
 class App extends Component{
   state = { artist: null, tracks: [] };
 
-  searchArtist = () => {
-    fetch(`${API_ADDRESS}/artist/${this.state.artistQuery}`)
+  componentDidMount() {
+    this.searchArtist('tash cobbs');
+  }
+
+  searchArtist = artistQuery => {
+    fetch(`${API_ADDRESS}/artist/${artistQuery}`)
     .then(response => response.json())
     .then(json => {
 
@@ -28,8 +32,6 @@ class App extends Component{
   }
 
   render() {
-    console.log('this.state', this.state);
-
     return (
       <div>
         <h2>Music Professor</h2>

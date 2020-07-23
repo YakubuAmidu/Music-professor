@@ -19,5 +19,15 @@ h1, h2, h3, h4, h5 {
   font-family: 'EconomicaBold';
 }
 
+.track {
+  width: 250px;
+  height: 250px;
+}
+
+.track-image {
+  width: 250px;
+  height: 250px;
+}
+
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

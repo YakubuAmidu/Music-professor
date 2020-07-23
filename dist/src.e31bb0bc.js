@@ -24104,7 +24104,7 @@ var Search = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "searchArtist", function () {
-      _this.props.searchArtist();
+      _this.props.searchArtist(_this.state.artistQuery);
     });
 
     return _this;
@@ -24268,11 +24268,15 @@ var Tracks = /*#__PURE__*/function (_Component) {
             preview_url = track.preview_url;
         return /*#__PURE__*/_react.default.createElement("div", {
           key: id,
-          onClick: _this2.playAudio(preview_url)
+          onClick: _this2.playAudio(preview_url),
+          className: "track"
         }, /*#__PURE__*/_react.default.createElement("img", {
           src: album.images[0].url,
-          alt: "track-image"
-        }), /*#__PURE__*/_react.default.createElement("p", null, name));
+          alt: "track-image",
+          className: "track-image"
+        }), /*#__PURE__*/_react.default.createElement("p", {
+          className: "track-text"
+        }, name));
       }));
     }
   }]);
@@ -24351,8 +24355,8 @@ var App = /*#__PURE__*/function (_Component) {
       tracks: []
     });
 
-    _defineProperty(_assertThisInitialized(_this), "searchArtist", function () {
-      fetch("".concat(API_ADDRESS, "/artist/").concat(_this.state.artistQuery)).then(function (response) {
+    _defineProperty(_assertThisInitialized(_this), "searchArtist", function (artistQuery) {
+      fetch("".concat(API_ADDRESS, "/artist/").concat(artistQuery)).then(function (response) {
         return response.json();
       }).then(function (json) {
         if (json.artists.total > 0) {
@@ -24381,9 +24385,13 @@ var App = /*#__PURE__*/function (_Component) {
   }
 
   _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.searchArtist('tash cobbs');
+    }
+  }, {
     key: "render",
     value: function render() {
-      console.log('this.state', this.state);
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Music Professor"), /*#__PURE__*/_react.default.createElement(_Search.default, {
         searchArtist: this.searchArtist
       }), /*#__PURE__*/_react.default.createElement(_Artist.default, {
