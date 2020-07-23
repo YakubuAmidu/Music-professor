@@ -1,0 +1,1 @@
+A musice search app that search for artist and their songs with a play button to play for some seconds.
