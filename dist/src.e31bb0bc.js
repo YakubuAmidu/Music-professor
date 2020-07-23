@@ -24096,8 +24096,6 @@ var App = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "updateArtistQuery", function (event) {
-      console.log('event.target.value', event.target.value);
-
       _this.setState({
         artistQuery: event.target.value
       });
@@ -24113,14 +24111,14 @@ var App = /*#__PURE__*/function (_Component) {
       fetch("".concat(API_ADDRESS, "/artist/").concat(_this.state.artistQuery)).then(function (response) {
         return response.json();
       }).then(function (json) {
-        if (json.artist.total > 0) {
-          var artist = json.artist.items[0];
+        if (json.artists.total > 0) {
+          var artist = json.artists.items[0];
 
           _this.setState({
             artist: artist
           });
 
-          _this.setState("".concat(API_ADDRESS, "/artist/").concat(artist.id, "/top-tracks")).then(function (response) {
+          fetch("".concat(API_ADDRESS, "/artist/").concat(artist.id, "/top-tracks")).then(function (response) {
             return response.json();
           }).then(function (json) {
             return _this.setState({
@@ -24141,6 +24139,7 @@ var App = /*#__PURE__*/function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
+      console.log('this.state', this.state);
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Music Professor"), /*#__PURE__*/_react.default.createElement("input", {
         onChange: this.updateArtistQuery,
         onKeyPress: this.handleKeyPress,
