@@ -1,6 +1,6 @@
 {
   "homepage": "hppts://YakubuAmidu.github.io/Music-professor",
-  "name": "music-professor",
+  "name": "Music-professor",
   "version": "1.0.0",
   "description": "A musice search app that search for artist and their songs with a play button to play for some seconds.",
   "main": "index.js",
