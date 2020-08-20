@@ -1,9 +1,12 @@
 {
+  "homepage": "https://github.com/YakubuAmidu/Music-professor",
   "name": "music-professor",
   "version": "1.0.0",
   "description": "A musice search app that search for artist and their songs with a play button to play for some seconds.",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
     "start": "npm run build && live-server dist"
@@ -25,5 +28,8 @@
   },
   "bugs": {
     "url": "https://github.com/YakubuAmidu/Music-professor/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
